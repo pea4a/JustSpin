@@ -49,7 +49,7 @@ const SlotMachine = () => {
 
       {won && ( // Условный рендеринг изображения
         <div>
-          <img src="1.jpg" alt="Виграш" style={{ width: "300px", marginTop: "20px" }} />
+          <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/Lsvpmm3P/1.jpg' border='0' alt='1'/></a>
         </div>
       )}
     </div>
