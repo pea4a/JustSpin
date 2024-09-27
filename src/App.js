@@ -42,11 +42,12 @@ const SlotMachine = () => {
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[1]}</div>
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[2]}</div>
       </div>
-      <button className="vsyo" onClick={spinReels} disabled={spinning}>
+      <div className="vsyo">
+      <button onClick={spinReels} disabled={spinning}>
         {spinning ? "крутиця..." : "Крутитись"}
       </button>
       <p>{message}</p>
-
+      </div>
       {won && ( // Условный рендеринг изображения
         <div className="vsyo">
           <img src='https://i.postimg.cc/Lsvpmm3P/1.jpg' height='300px' width='300px' border='0' alt='1' />
