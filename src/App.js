@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./SlotMachine.css"; // Импортируем CSS для анимации
 
 const SlotMachine = () => {
-  const symbols = ["🍒", "🍋", "🍉", "⭐", "💎"];
+  const symbols = ["📕", "💼", "✏️", "🦒", "📎"];
   const [reels, setReels] = useState(["", "", ""]);
   const [spinning, setSpinning] = useState(false);
   const [message, setMessage] = useState("");
