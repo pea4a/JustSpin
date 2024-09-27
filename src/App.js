@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./SlotMachine.css";
+import "./SlotMachine.css"; // Импортируем CSS для анимации
 
 const SlotMachine = () => {
-  const symbols = ["🍒", "🍋", "🍉", "⭐", "🦒"];
+  const symbols = ["🍒", "🍋", "🍉", "⭐", "💎"];
   const [reels, setReels] = useState(["", "", ""]);
   const [spinning, setSpinning] = useState(false);
   const [message, setMessage] = useState("");
@@ -11,6 +11,7 @@ const SlotMachine = () => {
     setSpinning(true);
     setMessage(""); // Очищаем сообщение при новом вращении
 
+    // Через 1 секунду остановим вращение и установим новые значения
     setTimeout(() => {
       const newReels = [
         symbols[Math.floor(Math.random() * symbols.length)],
@@ -24,27 +25,23 @@ const SlotMachine = () => {
   };
 
   const checkResult = (newReels) => {
-    // Генерируем случайное число от 1 до 10
-    const winChance = Math.floor(Math.random() * 10) + 1;
-    
-    // Если выпало число 1, то это выигрыш, независимо от символов
-    if (winChance === 1) {
-      setMessage("Поздравляем! Вы выиграли!");
+    if (newReels[0] === newReels[1] && newReels[1] === newReels[2]) {
+      setMessage("ВІтаємо! Вы вииграли пробний урок!");
     } else {
-      setMessage("Попробуйте снова!");
+      setMessage("Спробуй знову!");
     }
   };
 
   return (
     <div>
-      <h1>JustSpin</h1>
+      <h1>Слот-машина</h1>
       <div className="slot-container">
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[0]}</div>
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[1]}</div>
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[2]}</div>
       </div>
       <button onClick={spinReels} disabled={spinning}>
-        {spinning ? "Вращается..." : "Крутить"}
+        {spinning ? "крутиця..." : "Крутити"}
       </button>
       <p>{message}</p>
     </div>
