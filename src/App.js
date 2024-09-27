@@ -6,12 +6,13 @@ const SlotMachine = () => {
   const [reels, setReels] = useState(["", "", ""]);
   const [spinning, setSpinning] = useState(false);
   const [message, setMessage] = useState("");
+  const [won, setWon] = useState(false); // Добавим новое состояние для выигрыша
 
   const spinReels = () => {
     setSpinning(true);
-    setMessage(""); // Очищаем сообщение при новом вращении
+    setMessage("");
+    setWon(false); // Сбрасываем состояние выигрыша
 
-    // Через 1 секунду остановим вращение и установим новые значения
     setTimeout(() => {
       const newReels = [
         symbols[Math.floor(Math.random() * symbols.length)],
@@ -21,12 +22,13 @@ const SlotMachine = () => {
       setReels(newReels);
       setSpinning(false);
       checkResult(newReels);
-    }, 3000); // Вращаем барабаны 3 секунды для эффекта
+    }, 3000);
   };
 
   const checkResult = (newReels) => {
     if (newReels[0] === newReels[1] && newReels[1] === newReels[2]) {
       setMessage("ВІтаємо! Вы вииграли пробний урок!");
+      setWon(true); // Выставляем состояние выигрыша
     } else {
       setMessage("Спробуй знову!");
     }
@@ -44,6 +46,12 @@ const SlotMachine = () => {
         {spinning ? "крутиця..." : "Крутитись"}
       </button>
       <p>{message}</p>
+
+      {won && ( // Условный рендеринг изображения
+        <div>
+          <img src="1.jpg" alt="Виграш" style={{ width: "300px", marginTop: "20px" }} />
+        </div>
+      )}
     </div>
   );
 };
