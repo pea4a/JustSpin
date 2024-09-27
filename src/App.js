@@ -34,7 +34,7 @@ const SlotMachine = () => {
 
   return (
     <div>
-      <h1>Just Slot</h1>
+      <h1>Just Spin</h1>
       <div className="slot-container">
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[0]}</div>
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[1]}</div>
