@@ -42,7 +42,7 @@ const SlotMachine = () => {
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[1]}</div>
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[2]}</div>
       </div>
-      <button onClick={spinReels} disabled={spinning}>
+      <button className="vsyo" onClick={spinReels} disabled={spinning}>
         {spinning ? "крутиця..." : "Крутитись"}
       </button>
       <p>{message}</p>
