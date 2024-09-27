@@ -28,4 +28,8 @@
       transform: rotate(360deg);
     }
   }
-  
+  .vsyo {
+    justify-content: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }

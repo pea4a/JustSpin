@@ -35,9 +35,9 @@ const SlotMachine = () => {
   };
 
   return (
-    <div className="slot-container">
-      <h1>Just Spin</h1>
-      <div>
+    <div >
+      <h1 className="vsyo">Just Spin</h1>
+      <div className="slot-container">
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[0]}</div>
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[1]}</div>
         <div className={`reel ${spinning ? "spinning" : ""}`}>{reels[2]}</div>
@@ -48,7 +48,7 @@ const SlotMachine = () => {
       <p>{message}</p>
 
       {won && ( // Условный рендеринг изображения
-        <div>
+        <div className="vsyo">
           <img src='https://i.postimg.cc/Lsvpmm3P/1.jpg' height='300px' width='300px' border='0' alt='1' />
         </div>
       )}
